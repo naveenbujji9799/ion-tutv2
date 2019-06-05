@@ -1,0 +1,72 @@
+<ion-header>
+    <ion-toolbar class="headerbgc">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        Default parameters
+      </ion-title>
+    </ion-toolbar>
+</ion-header>
+  
+<ion-content>
+  <ion-toolbar class="bordernew">    
+    <p class="fontq">Default parameters</p>
+    <p>Default fucntion parameters allow formal parameters to be initiaized with default values if no value or undefined is passed.</p>
+    <p>In JavaScript, parameters of function default to undefine. However, in some situations it might be useful to set a different default value. This is where default parameters can help</p>
+
+    <div class="boxed">
+      <p><span class="bl"><b>function</b></span><span class="re"><b>multiply</b></span><span class="bl">&#40;value1 ,value2=</span><span class="re">1</span><span class="bl">&#41; &#123;</span></p>
+      <p><span class="bl"><b>return </b> value1 &#42; value2;</span></p>
+      <p><span class="bl">&#125;</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;multiply&#40;</span><span class="re">4</span><span class="bl">&#41;&#41;;</span><span class="br">&#47;&#47; 4</span></p>
+    </div>
+
+    <p>The above code is equivalent to thebelow ES5 standard code</p>
+    <div class="boxed">
+      <p><span class="bl"><b>function </b></span><span class="re"><b>multiply</b></span><span class="bl">&#40;value1, value2&#41; &#123;</span></p>
+      <p><span class="bl"><b>if </b>&#40;value2 === <b>void</b></span><span class="re">0</span><span class="bl">&#41; &#123;</span></p>
+      <p><span class="bl">value2 = </span><span class="re">1</span><span class="bl">;</span></p>
+      <p><span class="bl">&#125;</span></p>
+      <p><span class="bl"><b>return </b> value1 &#42; value2;</span></p>
+      <p><span class="bl">&#125;</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;multiply&#40;</span><span class="re">4</span><span class="bl">&#41;&#41;;</span><span class="br">&#47;&#47; 4</span></p>
+    </div>
+
+    <p class="fontqq">Functions as parameters</p>
+    <p>Default parameters are always executed first, function declaartions nside the function body evaluate afterwards.</p>
+    <p>Functions declared in the function body cannot be referred inside default parameters and throw a Error.</p>
+    <p>The below code throws <span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">ReferenceError</span></p>
+    <div class="boxed">
+      <p><span class="bl"><b>function</b></span><span class="re"><b>multiply</b></span><span class="bl">&#40;a,b = sqrt &#40;&#41;&#41; &#123;</span></p>
+      <p><span class="bl"><b>function</b></span><span class="re"><b>sqrt</b></span><span class="bl">&#40;&#41; &#123;</span></p>
+      <p><span class="bl"><b>return </b></span><span class="gr">Math</span><span class="bl">.SQRT2;</span></p>
+      <p><span class="bl">&#125;</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;b&#41;;</span></p>
+      <p><span class="bl"><b>return </b> a &#42; b;</span></p>
+      <p><span class="bl">&#125;</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;multiply&#40;</span><span class="re">4</span><span class="bl">&#41;&#41;;</span></p>
+    </div>
+
+    <p>Working functions parameter code:</p>
+    <div class="boxed">
+        <p><span class="bl"><b>function</b></span><span class="re"><b>sqrt</b></span><span class="bl">&#40;&#41; &#123;</span></p>
+        <p><span class="bl"><b>return </b></span><span class="gr">Math</span><span class="bl">.SQRT2;</span></p>
+        <p><span class="bl">&#125;</span></p>
+        <p><span class="gr">console</span><span class="bl">.log&#40;b&#41;;</span><span class="br">&#47;&#47; 1.4142135623730951</span></p>
+        <p><span class="bl"><b>return </b> a &#42; b;</span></p>
+        <p><span class="bl">&#125;</span></p>
+        <p><span class="gr">console</span><span class="bl">.log&#40;multiply&#40;</span><span class="re">4</span><span class="bl">&#41;&#41;;</span><span class="br">&#47;&#47; 5.656854249492381</span></p>
+    </div>
+
+    <div class="sharebox1">
+      <p>New version of ECMAScript app available now&#33;.</p>
+      <p>It contains all ES6 features with browser agents support details.</p>
+      <p class="sharebox2">Check it in play store</p>
+    </div>
+  
+    <div class="sharebox1 sharebox2">
+      Visit us
+    </div> 
+  </ion-toolbar>
+</ion-content>

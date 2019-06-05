@@ -1,0 +1,120 @@
+<ion-header>
+  <ion-toolbar class="headerbgc">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Let &#38; Constants
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-toolbar class="bordernew">    
+    <p class="fontq">Let</p>
+    <p>The <span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">let</span> statement declares a block scope local variable &#40;npt function level scope like <span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">war</span>&#41;.</p>
+
+    <div class="boxed">
+      <p><span class="bl"><b>let </b>count = </span><span class="re">2</span><span class="bl">;</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;value&#41;;</span><span class="br">&#47;&#47;2</span></p>
+      <p><span class="bl"><b>function </b></span><span class="re"><b>fun</b></span><span class="bl">&#40;&#41; &#123;</span></p>
+      <p><span class="bl"><b>let</b> count = </span><span class="re">4</span><span class="bl">;</span><span class="br">&#47;&#47; different value assigned to count </span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;count&#41;</span><span class="br">&#47;&#47;4</span></p>
+      <p><span class="bl">&#125;</span></p>
+      <p><span class="bl">fun&#40;&#41;</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;count&#41;;</span><span class="br">&#47;&#47;2</span></p>
+    </div>
+
+    <p>Redeclaring the same variable within the same function or block scope raises a <span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">SyntaxError</span>.</p>
+
+    <div class="boxed">
+      <p><span class="bl"><b>let</b> count = </span><span class="re">2</span><span class="bl">;</span></p>
+      <p><span class="bl"><b>let</b> count = </span><span class="re">3</span><span class="bl">;</span><span class="br">&#47;&#47;Identifier 'count' has already been declared</span></p>
+    </div>
+
+    <p class="fontq">Hoisting</p>
+    <p>C</p>
+
+    <div class="boxed">
+      <p><span class="bl"><b>function</b></span><span class="re"><b>fun</b></span><span class="bl">&#40;&#41; &#123;</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;count&#41;;</span><span class="br">&#47;&#47; ReferenceError: count is not defined</span></p>
+      <p><span class="bl"><b>let </b>count = </span><span class="re">4</span><span class="bl">;</span></p>
+      <p><span class="bl">&#125;</span></p>
+      <p><span class="bl">fun&#40;&#41;;</span></p>
+    </div>
+
+    <p>let and const are hoisted &#40;like var and function&#41;, but there is a period between entering scope and being declared where they cannot be accessed. This period is the <span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">temporal dead zone&#40;TDZ&#41;.</span></p>
+
+    <div class="boxed">
+      <p><span class="bl"><b>var</b>count = </span><span class="re">1</span><span class="bl">;</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;count&#41;;</span><span class="br">&#47;&#47; SyntaxError: Identifier 'count' has already been declared</span></p>
+      <p><span class="bl"><b>let </b>count = </span><span class="re">4</span><span class="bl">;</span></p>
+    </div>
+
+    <p>Still the above statement throwing error. Because of <span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">TDZ</span></p>
+    <p class="fontqq">What is temporal dead zone &#40;TDZ&#41; in ES6</p>
+    <p>In ECMAScript 6, accessing a let or const variable before its declaration &#40;within its scope&#41; causes a <span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">ReferenceError</span></p>
+    <p>There are several reasons why const and let have temporal dead zones:</p>`
+    
+    <p class="bulletspacing"><b style="font-size:25px">&#8901;</b><b> To  catch programming errors:</b> Being able to access a variabe before its declaration is strange. Iff you do so, it is normally by accident and you should be warned about it.</p>
+    <p class="bulletspacing"><b style="font-size:25px">&#8901;</b><b> For const:</b> Making const work properly is difficult.</p>
+    <p class="bulletspacing"><b style="font-size:25px">&#8901;</b><b> Future-proofing for guards:</b> JavaScript may eventually have guards, a mechanism for enforcing ata runtime that a variable has the correct value &#40;think runtime type check&#41;. If the value of a variable iss undefined before its declaration then that value may be in conflict with the guarantee given by its guard.</p>
+
+    <p class="fontqq">Constants</p>
+    <p><span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">const</span> works like <code>let</code>, but the variable you declare must be immediately initialized, with a value that can't be changed afterwards.</p>
+    <p>The const declaration creates a read-only reference to a value.</p>
+    <p>Dcelaration and Usage</p>
+
+    <div class="boxed">
+      <p><span class="bl"><b>const </b>PI;</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;PI&#41;;</span><span class="br">&#47;&#47; Missing initializer in const declaration</span></p>
+    </div>
+
+    <p>The value of a constant canno change through re-assignment, and it can't be redeclared.</p>
+
+    <div class="boxed">
+        <p><span class="bl"><b>const </b>PI =</span><span class="re">3.14</span><span class="bl">;</span></p>
+        <p><span class="gr">console</span><span class="bl">.log&#40;PI&#41;;</span><span class="br">&#47;&#47; 3.14</span></p>
+        <p><span class="bl">PI =</span><span class="re">3.14</span><span class="bl">;</span></p>
+        <p><span class="gr">console</span><span class="bl">.log&#40;PI&#41;;</span><span class="br">&#47;&#47; Identifier 'PI' has already been declared</span></p>
+    </div>
+
+    <p>Cannot re-assign any value to const after declaration.</p>
+
+    <div class="boxed">
+        <p><span class="bl"><b>const </b>PI =</span><span class="re">3.14</span><span class="bl">;</span></p>
+        <p><span class="bl">PI =</span><span class="re">3.14</span><span class="bl">;</span></p>
+        <p><span class="gr">console</span><span class="bl">.log&#40;PI&#41;;</span><span class="br">&#47;&#47; Uncaught TypeError: Assignment to constant variable.&#40;...&#41;</span></p>
+      </div>
+
+    <p class="fontqq"><code>const</code> Scope</p>
+
+    <div class="boxed">
+      <p><span class="bl"><b>const </b>PI =</span><span class="re">3.14</span><span class="bl">;</span></p>
+      <p><span class="bl"><b>function </b></span><span class="re"><b>fun</b></span><span class="bl">&#40;&#41; &#123;</span></p>
+      <p><span class="bl"><b>const </b>PI =</span><span class="re">3.141</span><span class="bl">;</span></p>
+      <p><span class="bl"><b>if&#40;</b></span><span class="gr">true</span><span class="bl">&#41; &#123;</span></p>
+      <p><span class="bl"><b>const </b>PI =</span><span class="re">3.14159</span><span class="bl">;</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;PI&#41;;</span><span class="br">&#47;&#47;3.14159</span></p>
+      <p><span class="bl">&#125;</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;PI&#41;;</span><span class="br">&#47;&#47;3.141</span></p>
+      <p><span class="bl">&#125;</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;PI&#41;;</span><span class="br">&#47;&#47;3.14</span></p>
+      <p><span class="bl">fun&#40;&#41;;</span></p>
+      <p><span class="br">&#47;&#47;Outputs</span></p>
+      <p><span class="br">&#47;&#47;3.14</span></p>
+      <p><span class="br">&#47;&#47;3.14159</span></p>
+      <p><span class="br">&#47;&#47;3.141</span></p>
+    </div>
+    <div class="sharebox1">
+      <p>New version of ECMAScript app available now&#33;.</p>
+      <p>It contains all ES6 features with browser agents support details.</p>
+      <p class="sharebox2">Check it in play store</p>
+    </div>
+   
+    <div class="sharebox1 sharebox2">
+      Visit us
+    </div>
+
+  </ion-toolbar>
+</ion-content>

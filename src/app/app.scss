@@ -1,0 +1,74 @@
+// App Styles
+// ----------------------------------------------------------------------------
+// Put style rules here that you want to apply to the entire application. These 
+// styles are for the entire app and not just one component. Additionally, this 
+// file can hold Sass mixins, functions, and placeholder classes to be imported 
+// and used throughout the application.
+ion-content{
+    --ion-background-color:rgb(255, 151, 15);
+}
+
+.headerbgc{
+    --background:rgb(243, 141, 8);
+}
+
+.bordernew{
+    margin-right: 15px;
+    // margin-left: 10px;
+
+    font-family: Times New Roman;
+    line-height: 20px;
+}
+.fontq{
+    // font-family: Times New Roman;
+    font-size: 25px;
+}
+
+p{
+    margin:10px;
+}
+
+.bulletspacing{
+    margin-left: 25px;
+}
+
+.fontqq{
+    font-size: 20px;
+}
+
+.boxed{
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: rgb(243, 141, 8);
+    border-radius: 5px;
+}
+
+.re{
+    color: rgb(224, 26, 26);
+}
+.gr{
+    color: rgb(12, 145, 12);
+}
+.bl{
+    color:rgb(4, 4, 63);
+}
+.br{
+    color: brown;
+}
+
+.sharebox1{
+    margin-left: 10px;
+    margin-right:  10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: rgb(255, 109, 24)
+}
+
+.sharebox2{
+    background-color: red;
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    padding: 10px;
+}

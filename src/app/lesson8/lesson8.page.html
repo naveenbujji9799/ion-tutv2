@@ -1,0 +1,61 @@
+<ion-header>
+    <ion-toolbar class="headerbgc">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        Spread operator
+      </ion-title>
+    </ion-toolbar>
+</ion-header>
+  
+<ion-content>
+  <ion-toolbar class="bordernew">    
+    <p class="fontq">Spread Operator</p>
+    <p> The spread syntax allows an expression to be expanded in places where multiple arguments &#40;for function calls&#41; or multiple elements &#40;for array lterals&#41; or multiple variables &#40;for destructuring assignment&#41; are expected.</p>
+    <p>Example</p>
+    <p>Common usage of array as arguments to a fucntion is as below:</p>
+
+    <div class="boxed">
+      <p><span class="bl"><b>function</b></span><span class="re"><b>myFunction</b></span><span class="bl">&#40;x, y, z&#41; &#123;</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;x&#41;;</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;y&#41;;</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;z&#41;;</span></p>
+      <p><span class="bl">&#125;</span></p>
+      <p><span class="bl"><b>var </b>args = [</span><span class="re">0</span><span class="bl">,</span><span class="re">1</span><span class="bl">,</span><span class="re">2</span><span class="bl">];</span></p>
+      <p><span class="bl">myFunction&#40;args&#41;;</span></p>
+      <p><span class="br">&#47;&#47;[0,1,2]</span></p>
+      <p><span class="br">&#47;&#47;undefined</span></p>
+      <p><span class="br">&#47;&#47;undefined</span></p>
+    </div>
+
+    <p>With ES2015 spread you can now write the above as:</p>
+
+    <div class="boxed">
+        <p><span class="bl"><b>function</b></span><span class="re"><b>myFunction</b></span><span class="bl">&#40;x, y, z&#41; &#123;</span></p>
+        <p><span class="gr">console</span><span class="bl">.log&#40;x&#41;;</span></p>
+        <p><span class="gr">console</span><span class="bl">.log&#40;y&#41;;</span></p>
+        <p><span class="gr">console</span><span class="bl">.log&#40;z&#41;;</span></p>
+        <p><span class="bl">&#125;</span></p>
+        <p><span class="bl">myFunction&#40;...args&#41;;</span></p>
+        <p><span class="br">&#47;&#47;0</span></p>
+        <p><span class="br">&#47;&#47;1</span></p>
+        <p><span class="br">&#47;&#47;2</span></p>        
+    </div>
+
+    <p class="fontq">Rest operator Vs spread syntax</p>
+    <p>Rest operator <span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">...</span> looks exactly like the spread syntax <span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">...</span> and is used for destructuring arrays and objects.</p>
+    <p>In a way, Rest elements are the opposite of spread elements - spread elements 'expands' an array into its elements, and rest elements collects multiple elemnts and 'condenses' into a singke element.</p>
+
+
+    <div class="sharebox1">
+      <p>New version of ECMAScript app available now&#33;.</p>
+      <p>It contains all ES6 features with browser agents support details.</p>
+      <p class="sharebox2">Check it in play store</p>
+    </div>
+  
+    <div class="sharebox1 sharebox2">
+      Visit us
+    </div> 
+  </ion-toolbar>
+</ion-content>

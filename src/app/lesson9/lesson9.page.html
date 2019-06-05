@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar class="headerbgc">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        Promise
+      </ion-title>
+    </ion-toolbar>
+</ion-header>
+  
+<ion-content>
+  <ion-toolbar class="bordernew">    
+    <p class="fontq">Promises</p>
+    <p>The <span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">Promise</span> object is used for asynchronous computations. A Promise represents a value which may be available now, or in the future, or never.</p>
+    <p>A Promise is a proxy for a value mot necessarily known when the promise is created. It allows you to associate handlers with an asynchronous action's eventual success value or failure reason. This lets asynchronous methods: instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future.</p>
+
+    <p>A Promise is in one of these states:</p>
+    <p class="bulletspacing"><b style="font-size:25px">&#8901;</b><span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">pending: </span> initial state, not fulfilled or rejected.</p>
+    <p class="bulletspacing"><b style="font-size:25px">&#8901;</b><span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">fulfilled: </span> meaning that the operation completed successfully.</p>
+    <p class="bulletspacing"><b style="font-size:25px">&#8901;</b><span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">rejected: </span> meaning that the operation failed.</p>
+
+    <p>A pending promise can either be fulfilled with a value, or rejected with a reason &#40;error&#41;. When either of these options happen, the assosciated handlers queued up by a promise's then method are called. &#40;If the promise has already been fulfilled or rejected whena corresponding handler is attached, the handler will be called, so there is no race condition between an asynchronous operation completing and its handlers being attached.&#41;</p>
+    <p>Example</p>
+
+    <div class="boxed">
+      <p><span class="bl"><b>var </b>myFirstPromise = <b>new </b></span><span class="gr">Promise</span><span class="bl">&#40;<b>function</b>&#40;resolve,reject&#41; &#123;</span></p>
+      <p><span class="br">&#47;&#47;We call resolve&#40;...&#41; when what we were doing async succeeded, and reject&#40;...&#41; when it failed.</span></p>
+      <p><span class="br">&#47;&#47;In this example, we use setTimeout&#40;...&#41; to simulate async code.</span></p>
+      <p><span class="br">&#47;&#47;In reality, you will probably be using something like XHR or an HTML5 API.</span></p>
+      <p><span class="bl">setTimeout&#40;<b>function</b>&#40;&#41; &#123;</span></p>
+      <p><span class="bl">resolve&#40;</span><span class="re">"Success&#33;"</span><span class="bl">&#41;;</span><span class="br">&#47;&#47;Yay&#33; Everything went well&#33;</span></p>
+      <p><span class="bl">&#125;,</span><span class="re">250</span><span class="bl">&#41;;</span></p>
+      <p><span class="bl">&#125;;</span></p>
+      <br>
+      <p><span class="bl">myFirstPromise.then&#40;<b>function</b>&#40;successMessage&#41; &#123;</span></p>
+      <p><span class="br">&#47;&#47;successMessage is whatever we passed in the resolve&#40;...&#41; function above.</span></p>
+      <p><span class="br">&#47;&#47;It doesn't have to be a string, but if it is only a succeed message, it probably will be.</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;</span><span class="re">"Yay&#33;" </span><span class="bl">&#43; successMessage&#41;;</span></p>
+      <p><span class="bl">&#125;;</span></p>
+    </div>
+
+
+    <div class="sharebox1">
+      <p>New version of ECMAScript app available now&#33;.</p>
+      <p>It contains all ES6 features with browser agents support details.</p>
+      <p class="sharebox2">Check it in play store</p>
+    </div>
+  
+    <div class="sharebox1 sharebox2">
+      Visit us
+    </div> 
+  </ion-toolbar>
+</ion-content>

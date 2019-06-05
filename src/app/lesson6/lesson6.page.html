@@ -1,0 +1,77 @@
+<ion-header>
+    <ion-toolbar class="headerbgc">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        Rest parameters
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+<ion-content>
+  <ion-toolbar class="bordernew">    
+    <p class="fontq">Rest parameters</p>
+
+    <p>Putting the rest operator <span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">...</span> in front of the last formal parameter means that it will receive all remaining actual parameters in a Array.</p>
+    <p>In the below example, marks would collect the second argument of the function  &#40;because the first one is mapped to a&#41; and all the consecutive arguments.</p>
+
+    <div class="boxed">
+      <p><span class="bl"><b>fucntion </b></span><span class="re"><b>student</b></span><span class="bl">&#40;name,...marks&#41; &#123;</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;name&#41;;</span><span class="br">&#47;&#47; myname</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;marks&#41;;</span><span class="br">&#47;&#47; [10,20,30,40,50]</span></p>
+      <p><span class="bl">&#125;</span></p>
+      <p><span class="bl">student&#40;</span><span class="re">'myname'</span><span class="bl">,</span><span class="re">10</span><span class="bl">,</span><span class="re">20</span><span class="bl">,</span><span class="re">30</span><span class="bl">,</span><span class="re">40</span><span class="bl">,</span><span class="re">50</span><span class="bl">&#41;;</span></p>
+    </div>
+
+    <p class="fontqq"> Difference between rest parameters andthe arguments object</p>
+    <p>There are three main differences between rest parameters and the arguments object:</p>
+    <p class="bulletspacing"><b style="font-size:25px">&#8901;</b> rest parameters are only the ones that haven't been given a separate name, while the argumets object contains all arguments passed to the function;</p>
+    <p class="bulletspacing"><b style="font-size:25px">&#8901;</b> the arguments object is not a real array, while the rst parameters are Array instances, meaning methods like sort, map, forEach or pop can be applied on it diretly;</p>
+    <p class="bulletspacing"><b style="font-size:25px">&#8901;</b> the arguments object has additional functionality specific to itself.</p>
+
+    <p>Working with arguments old way</p>
+    <div class="boxed">
+      <p><span class="bl"><b>function</b></span><span class="re"><b>student</b></span><span class="bl">&#40;name, marks&#41; &#123;</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;name&#41;;</span><span class="br">&#47;&#47; myname</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;<span class="gr">arguments</span>&#41;;</span><span class="br">&#47;&#47; ["myname",7,4,8,2,9]</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;marks&#41;;</span><span class="br">&#47;&#47; 7</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;<span class="gr">arguments</span>.sort&#40;&#41;&#41;;</span><span class="br">&#47;&#47; Uncaught TypeError:arguments.sort is not a function&#40;...&#41;</span></p>
+      <p><span class="bl">&#125;</span></p>
+      <p><span class="bl">student&#40;</span><span class="re">'myname'</span><span class="bl">,</span><span class="re">7</span><span class="bl">,</span><span class="re">2</span><span class="bl">,</span><span class="re">8</span><span class="bl">,</span><span class="re">2</span><span class="bl">,</span><span class="re">9</span><span class="bl">&#41;;</span></p>      
+    </div>
+    
+    <p>The above code is equivalent to thebelow ES5 standard code</p>
+    <div class="boxed">
+        <p><span class="bl"><b>function</b></span><span class="re"><b>student</b></span><span class="bl">&#40;name, marks&#41; &#123;</span></p>
+        <p><span class="gr">console</span><span class="bl">.log&#40;name&#41;;</span><span class="br">&#47;&#47; myname</span></p>
+        <p><span class="gr">console</span><span class="bl">.log&#40;marks&#41;;</span><span class="br">&#47;&#47; [7,4,8,2,9]</span></p>
+        <p><span class="gr">console</span><span class="bl">.log&#40;marks.sort&#40;&#41;&#41;;</span><span class="br">&#47;&#47; 7</span></p>
+        <p><span class="bl">&#125;</span></p>
+        <p><span class="bl">student&#40;</span><span class="re">'myname'</span><span class="bl">,</span><span class="re">7</span><span class="bl">,</span><span class="re">2</span><span class="bl">,</span><span class="re">8</span><span class="bl">,</span><span class="re">2</span><span class="bl">,</span><span class="re">9</span><span class="bl">&#41;;</span></p>      
+    </div>
+
+    <p class="fontqq">Other usage example</p>
+    <div class="boxed">
+      <p><span class="bl"><b>function</b></span><span class="re"><b>student</b></span><span class="bl">&#40;name, marks&#41; &#123;</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;name&#41;;</span><span class="br">&#47;&#47; myname</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;marks&#41;;</span><span class="br">&#47;&#47; [10,20,30]</span></p>
+      <p><span class="bl"><b>var </b>total = marks.reduce&#40;<b>function</b>&#40;a,b&#41; &#123;</span></p>
+      <p><span class="bl"><b>return</b> a&#43;b;</span></p>
+      <p><span class="bl">&#125;&#41;</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;total&#41;;</span><span class="br">&#47;&#47; 150</span></p>
+      <p><span class="bl">&#125;</span></p>
+      <p><span class="bl">student&#40;</span><span class="re">'myname'</span><span class="bl">,</span><span class="re">7</span><span class="bl">,</span><span class="re">2</span><span class="bl">,</span><span class="re">8</span><span class="bl">,</span><span class="re">2</span><span class="bl">,</span><span class="re">9</span><span class="bl">&#41;;</span></p>      
+    </div>  
+      
+    <div class="sharebox1">
+      <p>New version of ECMAScript app available now&#33;.</p>
+      <p>It contains all ES6 features with browser agents support details.</p>
+      <p class="sharebox2">Check it in play store</p>
+    </div>
+    
+    <div class="sharebox1 sharebox2">
+      Visit us
+    </div> 
+  </ion-toolbar>
+</ion-content>

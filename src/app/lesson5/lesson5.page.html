@@ -1,0 +1,135 @@
+<ion-header>
+    <ion-toolbar class="headerbgc">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        Arrow functions
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+<ion-content>
+  <ion-toolbar class="bordernew">    
+    
+    <p class="fontq">Arrow functions</p>
+    <p>There are two benefits to arrow functions.</p>
+    <p class="bulletspacing"><b style="font-size:25px">&#8901;</b> Shorter syntax <span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">=></span> compared to function expressions.</p>
+    <p class="bulletspacing"><b style="font-size:25px">&#8901;</b><span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">this</span> is picked from the <span class="re">lexical scope</span> &#40;also called static scope&#41;.</p>
+    <p>Arrow functions are always <span class="re"> anonymous</span>. The examples are below:</p>
+    
+    <div class="boxed">
+      <p><span class="bl"><b>var </b> intro = &#40;&#41; =></span><span class="re">"Welcome"</span><span class="bl">;</span></p>
+    </div>
+
+    <p>The above code is equivalent of the below:</p>
+
+    <div class="boxed">
+      <p><span class="bl"><b>var </b> intro = <b>function</b></span><span class="re"><b>intro </b></span><span class="bl">&#40;&#41; &#123;</span></p>
+      <p><span class="bl"><b>return</b></span><span class="re">"<b>Welcome</b>"</span><span class="bl">;</span></p>
+      <p><span class="bl">&#125;;</span></p>
+    </div>
+
+    <p>Using Arrow function with <span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">map</span></p>
+
+    <div class="boxed">
+      <p><span class="bl"><b>const</b> arr = [</span><span class="re">1</span><span class="bl">,</span><span class="re">2</span><span class="bl">,</span><span class="re">3</span><span class="bl">];</span></p>
+      <p><span class="bl"><b>const </b> squares = arr.map&#40;x=>x&#42;x&#41;;</span></p>
+    </div>
+
+    <p>The above ccode is equivalent of the below:</p>
+
+    <div class="boxed">
+      <p><span class="bl"><b>var</b> arr = [</span><span class="re">1</span><span class="bl">,</span><span class="re">2</span><span class="bl">,</span><span class="re">3</span><span class="bl">];</span></p>
+      <p><span class="bl"><b>const </b> squares = arr.map&#40;<b>function</b> &#40;x&#41; &#123;</span></p>
+      <p><span class="bl"><b>return </b>x &#42; x;</span></p>
+      <p><span class="bl">&#125;&#41;;</span></p>
+    </div>
+
+    <p>Function with 1 parameter</p>
+    <div class="boxed">
+        <p><span class="bl"><b>var </b>multiplyBy2 = value1 => value1 &#42;</span><span class="re">2</span><span class="bl">;</span></p>      
+      <p><span class="gr">console</span><span class="bl">.log&#40;multiplyBy2&#40;</span><span class="re">4</span><span class="bl">&#41;&#41;;</span><span class="br">&#47;&#47;prints 8</span></p>
+    </div>
+
+    <p>The above ccode is equivalent of the below:</p>    
+    <div class="boxed">
+      <p><span class="bl"><b>var </b>multiplyBy2 = <b>function</b></span><span class="re"><b>multiplyBy2</b></span><span class="bl">&#40;value1&#41; &#123;</span></p>
+      <p><span class="bl"><b>return </b>value1&#42;</span><span class="re">2</span><span class="bl">;</span></p>
+      <p><span class="bl">&#125;;</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;multiplyBy2&#40;</span><span class="re">4</span><span class="bl">&#41;&#41;;</span><span class="br">&#47;&#47;prints 8</span></p>
+    </div>
+
+    <p>Function with more than 2 parameters</p>
+    <div class="boxed">
+      <p><span class="bl"><b>var </b>add = &#40;value1, value2&#41; => value1 &#43; value2;</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;add&#40;</span><span class="re">10</span><span class="bl">,</span><span class="re">20</span><span class="bl">&#41;&#41;;</span>  <span class="br">&#47;&#47; prints 30</span></p>
+    </div>
+
+    <p>The above ccode is equivalent of the below:</p>    
+    <div class="boxed">
+      <p><span class="bl"><b>var </b> add = <b>function</b></span><span class="re"><b>add</b></span><span class="bl">&#40;value1, value2&#41; &#123;</span></p>
+      <p> <span class="bl"><b>return </b> value1 &#43; value2;</span></p>
+      <p><span class="bl">&#125;;</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;add&#40;</span><span class="re">10</span><span class="bl">,</span><span class="re">20</span><span class="bl">&#41;&#41;;</span>  <span class="br">&#47;&#47; prints 30</span></p>
+    </div>
+
+    <p class="fontqq">this reference</p>
+    <p>The source of this is an important distinguishing aspect of arrow functions:</p>
+
+    <p class="bulletspacing"><b style="font-size:25px">&#8901;</b> Traditional functions have a <span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">dynamic this</span>; its value is determined by how thy are called.</p>
+    <p class="bulletspacing"><b style="font-size:25px">&#8901;</b>Arrow functions have a;<span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">lexical this</span> its value is determined by the surrounding scope.</p>
+
+    <p>The followig variables are all lexical inside arrow funcrions:</p>
+    <p class="bulletspacing"><b style="font-size:25px">&#8901;</b><span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">arguments</span></p>
+    <p class="bulletspacing"><b style="font-size:25px">&#8901;</b><span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">super</span></p>
+    <p class="bulletspacing"><b style="font-size:25px">&#8901;</b><span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">this</span></p>
+    <p class="bulletspacing"><b style="font-size:25px">&#8901;</b><span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">new.target</span></p>
+    <p>An arrow function does not create its own this context, so this has the original meaning from the nclosing context.</p>
+
+    <p>Working with <span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">this</span> until traditional way</p>
+    <div class="boxed">
+      <p><span class="bl"><b>fucntion</b></span><span class="re"><b> Person</b></span><span class="bl">&#40;&#41; &#123;</span></p>
+      <p><span class="bl"><b>var</b>_this = <b>this</b>;</span></p>
+      <p><span class="bl"><b>this</b>.count = </span><span class="re">0</span><span class="bl">;</span></p>
+      <p><span class="bl">setInterval&#40;<b>function</b>&#40;&#41; => &#123;</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;_this.count&#43;&#43;&#41;;</span><span class="br">&#47;&#47; this properly refers to the person object</span></p>
+      <p><span class="bl">&#125;, </span><span class="re">1000</span><span class="bl">&#41;;</span></p>
+      <p><span class="bl">&#125;</span></p>
+    </div>
+    
+    <div class="boxed">
+      <p><span class="bl"><b>fucntion</b></span><span class="re"><b> Person</b></span><span class="bl">&#40;&#41; &#123;</span></p>
+      <p><span class="bl"><b>this</b>.count = </span><span class="re">0</span><span class="bl">;</span></p>
+      <br>
+      <p><span class="bl">setInterval&#40;&#40;&#41; => &#123;</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;<b>this</b>.count&#43;&#43;&#41;;</span><span class="br">&#47;&#47; this properly refers to the person object</span></p>
+      <p><span class="bl">&#125;, </span><span class="re">1000</span><span class="bl">&#41;;</span></p>
+      <p><span class="bl">&#125;</span></p>
+    </div>
+
+    <p class="fontqq">Returning object literals</p>
+    <p>the object literal returned by this arrow function is like below:</p>
+    <div class="boxed">
+      <p><span class="bl"><b>const</b> f = x => &#40;&#123; bar: </span><span class="re">123 </span><span class="bl">&#125;&#41;</span></p>
+    </div>
+
+    <p>The above code is equivalent of the below:</p>
+    <div class="boxed">
+      <p><span class="bl"><b>var </b>f = <b>function</b></span><span class="re"><b>f</b></span><span class="bl">&#40;x&#41; &#123;</span></p>
+      <p><span class="bl"><b>return</b> &#123; bar: </span><span class="re">123 </span><span class="bl">&#125;;</span></p>
+      <p><span class="bl">&#125;;</span></p>      
+    </div>
+
+    <div class="sharebox1">
+      <p>New version of ECMAScript app available now&#33;.</p>
+      <p>It contains all ES6 features with browser agents support details.</p>
+      <p class="sharebox2">Check it in play store</p>
+    </div>
+       
+    <div class="sharebox1 sharebox2">
+      Visit us
+    </div>
+
+  </ion-toolbar>
+</ion-content>

@@ -1,0 +1,87 @@
+<ion-header>
+    <ion-toolbar class="headerbgc">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        for...of
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-toolbar class="bordernew">    
+      <p class="fontq">for...of</p>
+      <p><span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">for-of</span> is a new loop in ES6 that replaces both <span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">for-in</span> and <span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">forEach&#40;&#41;</span> and supports the new iteration protocol.</p>
+      
+      <p class="fontqq">Syntax</p>
+
+      <div class="boxed">
+        <p><span class="bl"><b>for </b>&#40;variable <b>of </b>iterable&#41; &#123;</span></p>
+        <p><span class="bl">statement</span></p>
+        <p><span class="bl">&#125;</span></p>
+      </div>
+
+      <p>Iterating over an Array</p>
+
+      <div class="boxed">
+        <p><span class="bl"><b>let </b>values = [</span><span class="re">10</span><span class="bl">,</span><span class="re">20</span><span class="bl">,</span><span class="re">30</span><span class="bl">];</span></p>
+        <p><span class="bl"><b>for</b>&#40;<b>let</b> value <b>of</b> values&#41; &#123;</span></p>
+        <p><span class="gr">console</span><span class="bl">.log&#40;value&#41;;</span></p>
+        <p><span class="bl">&#125;</span></p>
+        <p><span class="br">&#47;&#47;10</span></p>
+        <p><span class="br">&#47;&#47;20</span></p>
+      </div>
+
+      <div class="boxed">
+          <p><span class="bl"><b>let </b>values = [</span><span class="re">"red"</span><span class="bl">;</span></p>
+          <p><span class="bl"><b>for</b>&#40;<b>let</b> c <b>of</b> color&#41; &#123;</span></p>
+          <p><span class="gr">console</span><span class="bl">.log&#40;color&#41;;</span></p>
+          <p><span class="bl">&#125;</span></p>
+          <p><span class="br">&#47;&#47;r</span></p>
+          <p><span class="br">&#47;&#47;e</span></p>
+          <p><span class="br">&#47;&#47;d</span></p>
+      </div>
+  
+      <p class="fontqq">Difference between <span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">for...of</span> and <span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">for...in</span></p>
+      <p>The <span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">for...in</span> loop will iterate over all <span class="re"> enumerable properties</span> of an object.</p>
+      <p>The <span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">for...of</span> syntax is specific to collections, rather than all objects.</p>
+      <p>The following example shows the difference between a <span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">for...of</span> loop and a <span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">for...in</span> loop.</p>
+   
+      <p class="fontqq"><span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">for...in</span> Example</p>
+      <div class="boxed">
+          <p><span class="bl"><b>var </b>values = [</span><span class="re">"one"</span><span class="bl">,</span><span class="re">"two"</span><span class="bl">];</span></p>
+          <p><span class="bl"><b>for</b>&#40;<b>var</b> value <b>in</b> values&#41; &#123;</span></p>
+          <p><span class="gr">console</span><span class="bl">.log&#40;</span><span class="re">"Index is:"</span><span class="bl">&#43;value&#41;;</span></p>
+          <p><span class="bl">&#125;</span></p>
+          <p><span class="br">&#47;&#47;Index is: 0</span></p>
+          <p><span class="br">&#47;&#47;Index is: 1</span></p>
+          <p><span class="bl"><b>for</b>&#40;<b>var</b> value <b>in</b> values&#41; &#123;</span></p>
+          <p><span class="gr">console</span><span class="bl">.log&#40;</span><span class="re">"Value is:"</span><span class="bl">&#43;values[value]&#41;;</span></p>
+          <p><span class="bl">&#125;</span></p>
+          <p><span class="br">&#47;&#47;Value is: one</span></p>
+          <p><span class="br">&#47;&#47;Value is: two</span></p>
+      </div>
+
+      <p class="fontqq"><span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">for...of</span> Example</p>
+    <div class="boxed">
+      <p><span class="bl"><b>var </b>values = [</span><span class="re">"one"</span><span class="bl">,</span><span class="re">"two"</span><span class="bl">];</span></p>
+      <p><span class="bl"><b>for</b>&#40;<b>let</b> value <b>of</b> values&#41; &#123;</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;</span><span class="re">"Value is:"</span><span class="bl">&#43;value&#41;;</span></p>
+      <p><span class="bl">&#125;</span></p>
+      <p><span class="br">&#47;&#47;Value is: one</span></p>
+      <p><span class="br">&#47;&#47;Value is: two</span></p>
+    </div>
+
+    <div class="sharebox1">
+      <p>New version of ECMAScript app available now&#33;.</p>
+      <p>It contains all ES6 features with browser agents support details.</p>
+      <p class="sharebox2">Check it in play store</p>
+    </div>
+   
+    <div class="sharebox1 sharebox2">
+      Visit us
+    </div>
+
+    </ion-toolbar>
+</ion-content>

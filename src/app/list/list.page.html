@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar class="headerbgc">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      List
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-toolbar class="bordernew">    
+    <p class="fontq">Template Strings</p>
+    <p>ES6 has two new kinds of literals: <b>template literals</b> and <b>tagged template literals</b>.</p>
+    <p class="bulletspacing"><b style="font-size:25px">&#8901;</b><b> Template literals</b> are string literals with support for interpolation and multiple lines.</p>
+    <p class="bulletspacing"><b style="font-size:25px">&#8901;</b><b> Tagged template literals</b> (short: tagged templates): are function calls whose parameters are provided via template literals.</p>
+    <p class="fontqq">Template literals</p>
+    <p>This is a new kind of string literal allows to use multiple line strings and expression</p>
+    <p>Template literals are enclosed by the back-tick <span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);">'...'</span> character instead of double or single quotes.</p>
+    <!-- <p>Expressions can be indicated by the Dollar sign and curly braces ${...}</p> -->
+    <p> Expressions can be indicated by the Dollar sign and curly braces <span style="background-color:rgb(243, 141, 8);border-radius: 5px;color:rgb(27, 27, 107);"> &#36;&#123;...&#125;</span>;</p>
+    <div class="boxed">
+      <p> <span class="bl"><b >const</b> firstname =</span> <span class="re">'gns'</span>  <span class="bl">;</span> </p>
+      <p> <span class="gr">console</span><span class="bl">.log&#40;</span><span class="re">'Hello</span><span class="bl">&#36;&#123;firstname&#125;</span><span class="re">, How are you&#63;'</span><span class="bl">&#41;;</span></p>
+      <p><span class="br">&#47;&#47;output</span></p>
+      <p><span class="bl">Hello gns,</span></p>
+      <p><span class="bl">How are you&#63;</span></p>
+    </div>
+
+    <p>The above code is equivalent to tghe below ES5 standard </p>
+
+    <div class="boxed">
+      <p><span class="bl"><b>var </b>firstname = </span><span class="re">'gns'</span><span class="bl">;</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;</span><span class="re">"Hello"</span><span class="bl">&#43; firstname &#43;</span><span class="re">",nHow are you&#63;"</span><span class="bl">&#41;</span></p>
+      <p><span class="br">&#47;&#47;output</span></p>
+      <p><span class="bl">Hello gns,</span></p>
+      <p><span class="bl">How are you&#63;</span></p>
+    </div>
+
+    <p>Example 1</p>
+
+    <div class="boxed">
+      <p><span class="bl"><b>var</b>a = </span><span class="re">10</span><span class="bl">,b=</span><span class="re">20</span><span class="bl">;</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;</span><span class="re">'Addition value for</span><span class="bl">&#36;&#123;a&#125;}</span><span class="re">and</span><span class="bl">&#36;&#123;b&#125;</span><span class="re">is</span><span class="bl">&#36;&#123;a&#43;b&#125;</span><span class="re">'</span><span class="bl">&#41;;</span><span class="br">&#47;&#47;Addition value for 10 and 20 is 30</span></p>
+      <p><span class="bl"><b>var </b>user = &#123;name:</span><span class="re">'gns'</span><span class="bl">&#125;;</span></p>
+      <p><span class="gr">console</span><span class="bl">.log&#40;</span><span class="re">'Current User:</span><span class="bl">&#36;&#123;user.name.toUpperCase&#40;&#41;&#125;</span><span class="re">.'</span><span class="bl">&#41;;</span><span class="br">&#47;&#47;Current User: GNS.</span></p>
+    </div>
+
+    <p class="fontqq">Tagged template literals</p>
+    <p> A more advanced form of template literals are tagged templateliterals. With them you are able to modify the output of template literals using a function. The first argument conatons an array of string literals &#40;"Hello","world", and "" in this example&#41;. The second, and each arguent after the first one, are the values of the processed &#40;or sometimes called cooked&#41; substitution expressions&#40;"15" and "50" here&#41;. In the end, your function returns your manipulated string. There is nothing special about the name tag in the following example. The function name may be anything you want.</p>
+
+    <div class="boxed">
+      <p></p>
+    </div>
+  </ion-toolbar>
+  </ion-content>
